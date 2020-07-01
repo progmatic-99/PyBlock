@@ -1,0 +1,4 @@
+node/*
+__pycache__
+.flaskenv
+.vscode
