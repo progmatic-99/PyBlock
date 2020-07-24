@@ -86,8 +86,8 @@ def register_nodes():
         blockchain.register_node(node)
 
     response = {
-            "message": "New nodes have been added.",
-            "total_nodes": list(blockchain.nodes),
+        "message": "New nodes have been added.",
+        "total_nodes": list(blockchain.nodes),
     }
 
     return jsonify(response), 201
@@ -99,13 +99,13 @@ def consensus():
 
     if replaced:
         response = {
-                "message": "Our chain was replaced.",
-                "new_chain": blockchain.chain,
+            "message": "Our chain was replaced.",
+            "new_chain": blockchain.chain,
         }
     else:
         response = {
-                "message": "Our chain is authoritative.",
-                "chain": blockchain.chain,
+            "message": "Our chain is authoritative.",
+            "chain": blockchain.chain,
         }
 
     return jsonify(response), 200
@@ -113,4 +113,3 @@ def consensus():
 
 if __name__ == "__main__":
     app.run(debug=True)
-
