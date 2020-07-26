@@ -5,7 +5,7 @@ from flask import Flask, jsonify, request
 app = Flask(__name__)
 
 # Generate a globally unique address for this node
-node_identifier = str(uuid4()).replace("-", "")
+NODE_IDENTIFIER = str(uuid4()).replace("-", "")
 
 # Instantiate the Blockchain
 blockchain = Blockchain()
@@ -27,7 +27,7 @@ def mine():
     # Sender is '0' to signify that this node has mined a new coin
     blockchain.new_transaction(
         sender="0",
-        recipient=node_identifier,
+        recipient=NODE_IDENTIFIER,
         amount=1,
     )
 

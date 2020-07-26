@@ -6,7 +6,10 @@ from urllib.parse import urlparse
 from uuid import uuid4
 import requests
 
-class Blockchain(object):
+class Blockchain:
+    """
+    Blue-print of a block
+    """
 
     def __init__(self):
         self.chain = []
@@ -82,7 +85,8 @@ class Blockchain(object):
         return proof
 
     def valid_chain(self, chain):
-        """Determine if a given blockchain is valid
+        """
+        Determine if a given blockchain is valid
         :param chain: <list> A blockchain
         :return: <bool> True if valid, False if not
         """
@@ -170,5 +174,8 @@ class Blockchain(object):
 
     @property
     def last_block(self):
-        # Retruns the last block
+        """
+        Retruns the last block
+        """
+
         return self.chain[-1]
