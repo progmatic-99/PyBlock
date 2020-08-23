@@ -175,7 +175,7 @@ class Blockchain:
     @property
     def last_block(self):
         """
-        Retruns the last block
+        Returns the last block
         """
 
         return self.chain[-1]
